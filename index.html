@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineScope | Discover Family-Friendly Movies & Series</title>
+
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <!-- AMBIENT COLOR GLOW BACKGROUND -->
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <nav class="container">
+            <a href="#home" class="logo">Cine<span>Scope</span></a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#trending">Trending</a>
+                <a href="#movies">Movies</a>
+                <a href="#series">Series</a>
+                <a href="#watchlist">My Watchlist <span id="watchlistCount" class="badge">0</span></a>
+            </div>
+
+            <button id="menuBtn" class="menu-btn" aria-label="Toggle Menu">☰</button>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="subtitle">✨ ALL-AGES ENTERTAINMENT HUB</p>
+                <h2>Stream Trailers & Discover <span class="gradient-text">Iconic Movies & Series</span></h2>
+                <p>
+                    Explore thrilling adventures, sci-fi epics, heartwarming comedies, 
+                    and top-rated web series — with instant in-page trailer playback.
+                </p>
+                <div class="hero-actions">
+                    <button id="exploreBtn" class="primary-btn">🎬 Explore Movies</button>
+                    <button id="exploreSeriesBtn" class="secondary-btn">📺 Browse Series</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH SECTION -->
+    <section class="search-section container">
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search movies, series, actors, or genres..."
+            >
+            <button id="clearSearchBtn" class="clear-btn hidden" title="Clear search">✕</button>
+        </div>
+        <button id="searchBtn" class="primary-btn">Search</button>
+    </section>
+
+    <!-- TRENDING SECTION -->
+    <section id="trending" class="container section">
+        <div class="section-header">
+            <h2>🔥 Trending Now</h2>
+            <span class="section-tag tag-trending">Top Rated Picks</span>
+        </div>
+        <div id="trendingMovies" class="movie-grid"></div>
+    </section>
+
+    <!-- MOVIES SECTION -->
+    <section id="movies" class="container section">
+        <div class="section-header">
+            <h2>🎬 Explore Movies</h2>
+            <div class="filter-section">
+                <select id="genreFilter">
+                    <option value="all">All Genres</option>
+                    <option value="Action">⚡ Action</option>
+                    <option value="Drama">🎭 Drama</option>
+                    <option value="Comedy">😄 Comedy</option>
+                    <option value="Adventure">🧭 Adventure</option>
+                    <option value="Sci-Fi">🚀 Sci-Fi</option>
+                    <option value="Animation">🎨 Animation</option>
+                </select>
+
+                <select id="sortFilter">
+                    <option value="default">Sort By: Featured</option>
+                    <option value="rating">⭐ Top Rated</option>
+                    <option value="year">📅 Latest Release</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="movieList" class="movie-grid"></div>
+
+        <div class="load-more-wrapper">
+            <button id="loadMore" class="primary-btn">Load More Movies</button>
+        </div>
+    </section>
+
+    <!-- WEB SERIES SECTION -->
+    <section id="series" class="container section">
+        <div class="section-header">
+            <h2>📺 Popular Web Series</h2>
+            <span class="section-tag tag-series">PG / TV-14 Binge</span>
+        </div>
+        <div id="seriesList" class="movie-grid"></div>
+    </section>
+
+    <!-- WATCHLIST SECTION -->
+    <section id="watchlist" class="container section">
+        <div class="section-header">
+            <h2>❤️ My Watchlist</h2>
+        </div>
+        <div id="watchlistItems" class="movie-grid"></div>
+    </section>
+
+    <!-- MOVIE DETAILS & IN-PAGE VIDEO MODAL -->
+    <div id="movieModal" class="modal hidden">
+        <div class="modal-content">
+            <button id="closeModal" class="close-modal-btn" aria-label="Close Modal">✕</button>
+            <div id="movieDetails"></div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast hidden"></div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <h2 class="logo">Cine<span>Scope</span></h2>
+            <p>Discover. Preview. Watch.</p>
+            <p class="copyright">© 2026 CineScope. Family-Friendly Entertainment Catalog.</p>
+        </div>
+    </footer>
+
+    <script src="web.js/movies.js"></script>
+    <script src="web.js/watchlist.js"></script>
+    <script src="web.js/api.js"></script>
+    <script src="web.js/app.js"></script>
+</body>
+</html>
